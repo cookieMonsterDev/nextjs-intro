@@ -1,17 +1,23 @@
-import React from 'react'
-import { PostTypes } from '../../utils/types'
-import Post from './Post'
+import { useState, useEffect } from "react";
+import { PostTypes } from "../../utils/types";
+import Post from "./Post";
 
-interface PostsProps {
-  posts: PostTypes[]
-}
+const List = () => {
+  const [posts, setPosts] = useState<PostTypes[] | null>(null);
 
-const Posts = ({ posts }: PostsProps) => {
-  return (
-    <div>
-      {posts.map((i, j) => <Post {...i} key={j}/>)}
-    </div>
-  )
-}
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await fetch(
+        "https://jsonplaceholder.typicode.com/posts"
+      ).then((response) => response.json());
 
-export default Posts
+      setPosts(data);
+    };
+
+    fetchData();
+  }, []);
+
+  return <div>{posts && posts.map((i, j) => <Post {...i} key={j} />)}</div>;
+};
+
+export default List;
