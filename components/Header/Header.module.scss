@@ -1,0 +1,14 @@
+.navigation {
+  padding: 1rem;
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  background-color: darkcyan;
+
+  a {
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 600;
+    color: azure;
+  }
+}
