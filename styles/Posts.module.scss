@@ -1,0 +1,42 @@
+.list {
+  display: grid;
+  grid-gap: 1rem;
+  width: 80%;
+  margin: auto;
+
+  a {
+    text-decoration: none;
+    color: black;
+  }
+}
+
+.post {
+  border: 0.1rem solid black;
+  display: grid;
+  grid-template:  
+  "a b" auto
+  "c c" auto / 1fr 99fr;
+  font-family: 'Poppins', sans-serif;
+
+  > span:nth-child(1) {
+    grid-area: a;
+    color: red
+  }
+
+  > span:nth-child(2) {
+    grid-area: b;
+    padding-left: 0.3rem;
+    color: rgb(71, 162, 242);
+    font-weight: 800;
+  }
+
+  > span:nth-child(3) {
+    grid-area: c;
+  }
+}
+
+.single {
+  width: 80%;
+  margin: auto;
+}
+

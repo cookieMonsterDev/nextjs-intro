@@ -1,19 +1,30 @@
 import Head from "next/head";
-import List from "../../components/Posts/Posts"
+import List from "../../components/PostsList/PostsList"
+import { PostTypes } from "../../utils/types";
 
-const Posts = () => {
+const Posts = ({posts}: {posts: PostTypes[]}) => {
 
   return (
     <>
       <Head>
-        <title>Posts</title>
+        <title>NextJs Posts</title>
       </Head>
-      <h1>Posts</h1>
-      <br></br>
-      <br></br>
-      <List />
+      <h1 style={{textAlign: "center"}}>Posts</h1>
+      <List posts={posts}/>
     </>
   );
 };
+
+export const getStaticProps = async () => {
+  const data = await fetch(
+    `https://jsonplaceholder.typicode.com/posts`
+  ).then((response) => response.json());
+
+  return {
+    props: {
+      posts: data,
+    },
+  };
+}
 
 export default Posts;

@@ -1,8 +1,19 @@
 import { GetStaticPropsContext, GetStaticProps, GetStaticPaths } from "next";
 import { PostTypes } from "../../utils/types";
+import style from "../../styles/Posts.module.scss";
 
 const Post = ({ post }: { post: PostTypes }) => {
-  return <div>{post.body}</div>;
+  return (
+    <div className={`${style.post} ${style.single}`}>
+      <span>{post.id}:</span>
+      <span>
+        {post.title.charAt(0).toLocaleUpperCase() + post.title.slice(1)}
+      </span>
+      <span>
+        {post.body.charAt(0).toLocaleUpperCase() + post.body.slice(1)}
+      </span>
+    </div>
+  );
 };
 
 export const getStaticProps: GetStaticProps<{ post: PostTypes }> = async (
@@ -31,7 +42,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
   return {
     paths: [...paths],
-    fallback: false
+    fallback: false,
   };
 };
 

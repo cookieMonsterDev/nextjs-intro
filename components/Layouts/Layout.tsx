@@ -7,7 +7,7 @@ const Layout = ({ children }: LayoutProps) => {
   return (
     <>
       <Head>
-        <title>Some page</title>
+        <title>NextJs</title>
       </Head>
       <Header />
       <main>{children}</main>
