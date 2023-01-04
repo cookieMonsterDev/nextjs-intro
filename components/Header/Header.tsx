@@ -11,6 +11,10 @@ const pages = [
     link: "/posts",
   },
   {
+    name: "Articles",
+    link: "/articles",
+  },
+  {
     name: "Content",
     link: "/content",
   }
