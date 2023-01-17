@@ -17,6 +17,10 @@ const pages = [
   {
     name: "Content",
     link: "/content",
+  },
+  {
+    name: "MobX",
+    link: "/mobx",
   }
 ];
 

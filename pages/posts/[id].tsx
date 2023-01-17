@@ -1,5 +1,5 @@
 import { GetStaticPropsContext, GetStaticProps, GetStaticPaths } from "next";
-import { PostTypes } from "../../utils/types";
+import { PostTypes } from "../../src/utils/types";
 import style from "../../styles/Posts.module.scss";
 
 const Post = ({ post }: { post: PostTypes }) => {

@@ -1,4 +1,4 @@
-import { PostTypes } from "../../utils/types";
+import { PostTypes } from "../../src/utils/types";
 import Post from "./Post";
 import style from "../../styles/Posts.module.scss";
 

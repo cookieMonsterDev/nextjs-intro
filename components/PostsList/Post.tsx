@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import { PostTypes } from "../../utils/types";
+import { PostTypes } from "../../src/utils/types";
 import style from "../../styles/Posts.module.scss";
 
 const Post = ({ id, body, title }: PostTypes) => {
